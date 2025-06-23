@@ -1,0 +1,61 @@
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+
+html,body{
+    height: 100%;
+    width: 100%;
+}
+
+#main{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cards{
+    position:absolute;
+    height: 500px;
+    width: 320px;
+    border: 2px solid;
+    border-radius: 10%;
+    overflow: hidden;
+}
+
+#c1{ 
+  rotate: -21deg;
+}
+
+#c1:hover{
+    z-index: 5;
+}
+
+#c2{  
+  rotate: -14deg;
+}
+
+#c2:hover{
+    z-index: 5;
+}
+
+#c3{  
+  rotate: -7deg;
+}
+
+#c3:hover{
+    z-index: 5;
+}
+
+#c4:hover{
+    z-index: 5;
+}
+
+img{
+    height: 100%;
+    width:100%;
+    object-fit: cover;
+}
