@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sticky Notes App</title>
+<link rel="stylesheet" href="/stylesheets/style.css">
+
+</head>
+<body>
+
+<h1>My Notes</h1>
+
+<div class="add-note">
+    <form action="/create" method="post">
+        <input type="text" name='noteText' id="noteText" placeholder="Write a note...">
+        <select name='noteColor' id="noteColor">
+            <option value="yellow">Yellow</option>
+            <option value="pink">Pink</option>
+            <option value="blue">Blue</option>
+            <option value="green">Green</option>
+        </select>
+        <button type="submit">Add Note</button>
+        <!-- <button>Add Note</button> -->
+    </form>
+</div>
+
+<div class="notes-container" id="notesContainer">
+    <% if (files.length > 0){ %>
+        <% let i =0; %>
+        <% files.forEach(function(file){ %>
+            <div class="note <%= file.split('.')[2] %>">
+                <p><%= fileContents[i] %></p>
+                <button class="delete-btn" onclick="deleteNote('<%= file.id %>')"><b>X</b></button>
+            </div>
+            <% i++; %>
+        <% }) %>
+    <% } else { %>
+        <p>No notes available. Add a note to get started!</p>
+        <% } %>
+</div>
+
+<script type="module" src="/javascript/script.js"></script>
+</body>
+</html>
